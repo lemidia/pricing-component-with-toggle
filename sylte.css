@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    background-color: hsl(240, 78%, 98%);
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 15px;
+    position: relative;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 1200px;
+    max-width: 100%;
+    padding: 50px 50px 100px 50px;
+    position: relative;
+    z-index: 1;
+}
+
+body::before {
+    content: '';
+    background-color: transparent;
+    background-image: url(./images/bg-top.svg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-position: top right;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+body::after {
+    content: '';
+    background-color: transparent;
+    background-image: url(./images/bg-bottom.svg);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: hsl(233, 13%, 49%);
+    margin-bottom: 30px;
+}
+
+.toggle-container {
+    color: hsl(234, 14%, 74%);
+    margin-bottom: 50px;
+}
+
+.price-box {
+    color: hsl(233, 13%, 49%);
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    z-index: 1;
+}
+
+.price-box .monthly {
+    display: none;
+}
+
+.show-monthly .price-box .monthly {
+    display: block;
+}
+
+.show-monthly .price-box .annually {
+    display: none;
+}
+
+.price-box.premium {
+    padding: 55px 30px;
+    color: white;
+    background: linear-gradient(135deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+h4 {
+    margin: 0;
+}
+
+.price-box p {
+    font-size: 4em;
+    margin: 21px 0;
+}
+
+.price-box ul {
+    border-top: 1px solid hsla(234, 14%, 74%, 0.555);
+}
+
+.price-box ul li {
+    border-bottom: 1px solid hsla(234, 14%, 74%, 0.555);
+    padding: 15px;
+    font-size: 0.9em;
+}
+
+button {
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    width: 100%;
+    border-radius: 5px;
+    height: 40px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+.price-box.premium button {
+    background: white;
+    color: hsl(237, 63%, 64%);
+}
+
+.price-box.basic {
+    border-radius: 5px 0 0 5px;
+}
+
+.price-box.master {
+    border-radius: 0 5px 5px 0;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-container label{
+    width: 63px;
+    height: 30px;
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    display: inline-block;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+.toggle-container label .ball {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.3s ease;
+}
+
+
+.toggle-container input {
+    position: absolute;
+    left: -9999px;
+}
+
+.toggle-container input:checked + label .ball{
+    transform: translateX(33px);
+}
+
